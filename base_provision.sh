@@ -70,7 +70,11 @@ cp -r /tmp/server-config/etc/nginx/ /etc/
 service nginx start
 
 # Tools for development
-yum install -y git vim-enhanced
+yum install -y vim-enhanced
+
+# Git
+yum install http://opensource.wandisco.com/centos/6/git/x86_64/wandisco-git-release-6-1.noarch.rpm
+yum install -y git
 
 # Install GCC, etc.
 wget http://people.centos.org/tru/devtools-1.1/devtools-1.1.repo -P /etc/yum.repos.d
@@ -119,12 +123,12 @@ chown -R vagrant:vagrant /var/www/magento
 # Make things smaller
 yum -y clean all
 
-# Whiteout the swap partition to reduce box size 
-# Swap is disabled till reboot 
+# Whiteout the swap partition to reduce box size
+# Swap is disabled till reboot
 readonly swapuuid=$(/sbin/blkid -o value -l -s UUID -t TYPE=swap)
 readonly swappart=$(readlink -f /dev/disk/by-uuid/"$swapuuid")
 /sbin/swapoff "$swappart"
-dd if=/dev/zero of="$swappart" bs=1M || echo "dd exit code $? is suppressed" 
+dd if=/dev/zero of="$swappart" bs=1M || echo "dd exit code $? is suppressed"
 /sbin/mkswap -U "$swapuuid" "$swappart"
 
 dd if=/dev/zero of=/EMPTY bs=1M
