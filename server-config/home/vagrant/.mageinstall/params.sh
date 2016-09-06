@@ -1,0 +1,6 @@
+PROJECT_DOMAIN_MASK="__PROJECT__"
+ADMIN_PASSWORD="password12345"
+ADMIN_EMAIL="admin@localhost"
+MEDIA_DIR_OWNER=":nginx"
+PROJECT_DIR_OWNER="vagrant"
+ROOT="/var/www/"

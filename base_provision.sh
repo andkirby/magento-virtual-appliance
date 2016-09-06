@@ -72,6 +72,26 @@ service nginx start
 # Tools for development
 yum install -y vim-enhanced
 
+# Redis
+# Source: https://gist.github.com/nghuuphuoc/7801123
+rpm -Uvh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+yum -y --enablerepo=remi,remi-test install redis
+# PHP redis
+yum -y install php55w-pecl-redis
+
+# Memcached
+yum install -y memcached
+yum -y install php55w-pecl-memcached
+
+# NetCat
+#sudo yum -y install nc.x86_64
+#
+# check memcached status
+#    echo stats | nc 127.0.0.1 11211
+# OR
+#    netstat -tulpn | grep :11211
+
 # Git
 yum install http://opensource.wandisco.com/centos/6/git/x86_64/wandisco-git-release-6-1.noarch.rpm
 yum install -y git
@@ -100,7 +120,7 @@ git clone https://github.com/AOEPeople/mpmd.git \
 # Composer
 curl -sS https://getcomposer.org/installer | php
 chmod +x composer.phar
-mv composer.phar /usr/local/bin
+mv composer.phar /usr/local/bin/composer
 cp -r /tmp/server-config/home/vagrant/.composer /home/vagrant/
 chown -R vagrant:vagrant /home/vagrant/.composer
 
@@ -110,7 +130,22 @@ python /tmp/server-config/tmp/get-pip.py
 pip install fabric
 
 # Magento-Fabric
-su -c "/usr/local/bin/composer.phar global install" vagrant
+su -c "/usr/local/bin/composer global require rbd/magento-fabric dev-master" vagrant
+
+# Add MageShell for magento installation from CLI
+# Initialized parameters in file ~/.mageinstall/params.sh
+# To reinit use command
+#     $ mageshell install init
+# To install use command (domain: mage.cc, dir: /var/www/mage.cc)
+#     $ mageshell install -p mage.cc
+su -c "/usr/local/bin/composer global require andkirby/mageinstall ^7.0@beta" vagrant
+
+# Add nginx user into vagrant group
+usermod -G vagrant nginx
+
+# Install man (manual)
+yum install -y man
+####### End
 
 # User settings
 cat /tmp/server-config/home/vagrant/.ssh/known_hosts >> \
