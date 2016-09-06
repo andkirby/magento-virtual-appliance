@@ -3,9 +3,12 @@
 
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
+VM_WEB_IP = "127.0.0.1"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "chef/centos-6.5"
+  config.vm.box = "bento/centos-6.7"
+
+  config.vm.boot_timeout = 300
 
   config.vm.synced_folder ".", "/vagrant",
     disabled: true
@@ -24,4 +27,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "shell",
     path: "base_provision.sh"
 
+  config.vm.network "forwarded_port", host_ip: VM_WEB_IP, guest: 80, host: 80
+  config.vm.network "forwarded_port", host_ip: VM_WEB_IP, guest: 443, host: 443
 end
