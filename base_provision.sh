@@ -16,7 +16,7 @@ yum install -y pv
 # Install tree
 yum install -y tree
 
-# Install node
+# Install node 6.x
 curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
 yum install -y npm
 
