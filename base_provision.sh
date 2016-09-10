@@ -40,6 +40,8 @@ yum install -y php55w-cli
 yum install -y php55w-devel php55w-mcrypt php55w-gd php55w-pear php55w-soap
 yum install -y php55w-dom php55w-pdo php55w-mysqlnd php55w-pecl-xdebug
 
+yum -y install php55w-mbstring
+
 # Basic PHP config
 cp /tmp/server-config/etc/php.ini /etc/
 
