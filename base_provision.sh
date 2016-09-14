@@ -17,7 +17,11 @@ yum install -y pv
 yum install -y tree
 
 # Install nano editor
-yum install -y nano
+# install nano 2.0
+# yum install -y nano
+# install nano 2.2. http://superuser.com/questions/383005/centos-nano-upgrading
+#
+rpm -ivh http://www.nano-editor.org/dist/v2.2/RPMS/nano-2.2.6-1.x86_64.rpm
 git clone git@github.com:scopatz/nanorc.git /home/vagrant/.nano
 cat /home/vagrant/.nano/nanorc >> /home/vagrant/.nanorc
 chown vagrant:vagrant /home/vagrant/.nanorc
