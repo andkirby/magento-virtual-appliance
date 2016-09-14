@@ -16,6 +16,13 @@ yum install -y pv
 # Install tree
 yum install -y tree
 
+# Install nano editor
+yum install -y nano
+git clone git@github.com:scopatz/nanorc.git /home/vagrant/.nano
+cat /home/vagrant/.nano/nanorc >> /home/vagrant/.nanorc
+chown vagrant:vagrant /home/vagrant/.nanorc
+chown -R vagrant:vagrant /home/vagrant/.nano
+
 # Install node 6.x
 curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
 yum install -y npm
