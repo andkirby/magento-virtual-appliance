@@ -41,6 +41,10 @@ yum install -y jq
 npm install -g inherits
 npm install -g uglify-js bower grunt-cli gulp
 
+# Synchronization time services
+# There is the alias sync_time for fast syncing
+yum install -y ntp ntpdate ntp-doc
+
 # Add webtatic (more recent PHP)
 # We use -U to update rather than install, so that this script can be
 # run multiple times without incident.
