@@ -2,6 +2,15 @@
 
 A Vagrant box for developing Magento websites.
 
+## Changed by Kirby
+Changes list:
+- Added latest `git` installation
+- Set source VM to `bento/centos-6.8`
+- Set `PS1` colorization
+- Minor customizations in `.bashrc`
+- Added `redis` and `memcached`
+- Added latest `nano` version (2.3, TBD due to errors in bash provistion file)
+
 ## Installation
 
 The box can be found on [Atlas][atlas].
