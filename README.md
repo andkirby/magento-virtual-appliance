@@ -30,3 +30,14 @@ sensible.
 
 [atlas]: https://atlas.hashicorp.com/redbox-digital/boxes/appliance
 
+## Bugs
+### Network
+If you faced Internet connection troubles, please add new dns servers
+```shell
+$ sudo vi /etc/resolv.conf
+```
+New nameservers:
+```
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+```
