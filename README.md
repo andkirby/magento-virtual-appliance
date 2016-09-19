@@ -5,7 +5,7 @@ A Vagrant box for developing Magento websites.
 ## Changed by Kirby in andkirby/magento-virtual-appliance
 Changes list:
 - Added latest `git` installation
-- Set source VM to `bento/centos-6.8`
+- Set source VM to `bento/centos-6.7`
 - Set `PS1` colorization
 - Minor customizations in `.bashrc`
 - Added `redis` and `memcached`
