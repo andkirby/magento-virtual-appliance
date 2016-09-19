@@ -9,7 +9,7 @@ Changes list:
 - Set `PS1` colorization
 - Minor customizations in `.bashrc`
 - Added `redis` and `memcached`
-- Added latest `nano` version (2.3, TBD due to errors in bash provistion file)
+- Added latest `nano` RPM version (2.2)
 
 ## Installation
 
