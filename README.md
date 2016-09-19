@@ -1,6 +1,6 @@
 # The Redbox Appliance
 
-A Vagrant box for developing Magento websites.
+A Vagrant box for developing Magento websites. (bento/centos-6.7)
 
 ## Changed by Kirby in andkirby/magento-virtual-appliance
 Changes list:
