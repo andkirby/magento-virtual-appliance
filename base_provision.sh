@@ -158,6 +158,9 @@ su -c "/usr/local/bin/composer global require rbd/magento-fabric dev-master" vag
 #     $ mageshell install -p mage.cc
 su -c "/usr/local/bin/composer global require andkirby/mageinstall ^7.0@beta" vagrant
 
+# centos-scripts
+su -c "cd; git clone https://github.com/andkirby/centos-scripts-mage.git" vagrant
+
 # Add nginx user into vagrant group
 usermod -G vagrant nginx
 
