@@ -39,6 +39,26 @@ sensible.
 
 [atlas]: https://atlas.hashicorp.com/redbox-digital/boxes/appliance
 
+### Kirby's update
+
+#### v2.0.0 to v2.2.0
+ - Updated nano to v2.2.
+ - Added nano colorization.
+ - Added andkirby/centos-scripts-mage<br>
+ You may create new host `sh ~/centos-scripts/make-host.sh new-host.cc`
+ - Console colorization
+ - Added sync time services (alias `sync_time`)
+ - Added missed `mbstring` PHP extension
+ - Node 6.x will be installed instead old one
+ - VM box updated to `bento/centos-6.7`
+ - Added `redis` installation
+ - Added `memcached` installation
+ - Added PHP 7.0.x (7.0.11 at the moment)<br>
+ To use project with PHP 7.0 just create virtual host with suffix "-70.cc"<br>
+ PHP in console still is 5.5. <br>
+ To switch to PHP 7.0 use alias `php_switch_70`<br>
+ To switch to PHP 5.5 use alias `php_switch_55`<br>
+
 ## Bugs
 ### Vagrant 1.8.5
 Due to (this version issue)[http://stackoverflow.com/questions/39350227/cannot-make-vagrant-ssh-key-using-connection-in-base-initializing-authorized-ke] ((github issue)[https://github.com/mitchellh/vagrant/issues/7610]), there is a trick to avoid this problem.
