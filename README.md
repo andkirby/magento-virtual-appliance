@@ -1,6 +1,15 @@
 # The Redbox Appliance
 
-A Vagrant box for developing Magento websites.
+A Vagrant box for developing Magento websites. (bento/centos-6.7)
+
+## Changed by Kirby in andkirby/magento-virtual-appliance
+Changes list:
+- Added latest `git` installation
+- Set source VM to `bento/centos-6.7`
+- Set `PS1` colorization
+- Minor customizations in `.bashrc`
+- Added `redis` and `memcached`
+- Added latest `nano` RPM version (2.2)
 
 ## Installation
 
@@ -30,3 +39,25 @@ sensible.
 
 [atlas]: https://atlas.hashicorp.com/redbox-digital/boxes/appliance
 
+## Bugs
+### Vagrant 1.8.5
+Due to (this version issue)[http://stackoverflow.com/questions/39350227/cannot-make-vagrant-ssh-key-using-connection-in-base-initializing-authorized-ke] ((github issue)[https://github.com/mitchellh/vagrant/issues/7610]), there is a trick to avoid this problem.
+
+So, change permissions manually for `~/.ssh/*` files (please note port `2222` is a default one, you may have different one):
+```
+$ ssh vagrant@127.0.0.1 -p 2222 -o PubkeyAuthentication=no 'chmod 600 ~/.ssh/*'
+```
+And run `up` command with "provision" for installation.
+```
+$ vagrant up --provision
+```
+### DNS
+If you faced Internet connection troubles, please add new dns servers
+```shell
+$ sudo vi /etc/resolv.conf
+```
+New nameservers:
+```
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+```

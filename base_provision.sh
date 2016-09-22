@@ -22,10 +22,6 @@ yum install -y tree
 # install nano 2.2. http://superuser.com/questions/383005/centos-nano-upgrading
 #
 rpm -ivh http://www.nano-editor.org/dist/v2.2/RPMS/nano-2.2.6-1.x86_64.rpm
-git clone git@github.com:scopatz/nanorc.git /home/vagrant/.nano
-cat /home/vagrant/.nano/nanorc >> /home/vagrant/.nanorc
-chown vagrant:vagrant /home/vagrant/.nanorc
-chown -R vagrant:vagrant /home/vagrant/.nano
 
 # Install node 6.x
 curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
@@ -160,6 +156,9 @@ su -c "/usr/local/bin/composer global require andkirby/mageinstall ^7.0@beta" va
 
 # centos-scripts
 su -c "cd; git clone https://github.com/andkirby/centos-scripts-mage.git" vagrant
+
+# Nano editor colorization
+su -c "git clone https://github.com/scopatz/nanorc.git /home/vagrant/.nano && cat /home/vagrant/.nano/nanorc >> /home/vagrant/.nanorc" vagrant
 
 # Add nginx user into vagrant group
 usermod -G vagrant nginx
