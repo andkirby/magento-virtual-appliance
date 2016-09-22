@@ -2,15 +2,6 @@
 
 A Vagrant box for developing Magento websites. (bento/centos-6.7)
 
-## Changed by Kirby in andkirby/magento-virtual-appliance
-Changes list:
-- Added latest `git` installation
-- Set source VM to `bento/centos-6.7`
-- Set `PS1` colorization
-- Minor customizations in `.bashrc`
-- Added `redis` and `memcached`
-- Added latest `nano` RPM version (2.2)
-
 ## Installation
 
 The box can be found on [Atlas][atlas].
@@ -58,6 +49,7 @@ sensible.
  PHP in console still is 5.5. <br>
  To switch to PHP 7.0 use alias `php_switch_70`<br>
  To switch to PHP 5.5 use alias `php_switch_55`<br>
+ _Magento 2 Nginx configuration in BETA testing._
 
 ## Bugs
 ### Vagrant 1.8.5
