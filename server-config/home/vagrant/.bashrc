@@ -31,3 +31,6 @@ alias sync_time='sudo service ntpd stop && sudo ntpdate pool.ntp.org && sudo ser
 
 # Restart all services
 alias res='sudo service nginx restart && sudo pkill -f php-fpm && sudo service php-fpm start && sudo service php70-php-fpm start && sudo service redis restart && sudo service memcached restart'
+
+alias php_switch_55='sudo ln -sf /usr/bin/php55 /usr/bin/php'
+alias php_switch_70='sudo ln -sf /usr/bin/php70 /usr/bin/php'
