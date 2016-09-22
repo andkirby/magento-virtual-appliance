@@ -173,6 +173,26 @@ chown vagrant:vagrant /home/vagrant/.ssh/known_hosts
 mkdir -p /var/www/magento
 chown -R vagrant:vagrant /var/www/magento
 
+############## php 7.0.x ##############
+
+yum install -y php70
+yum install -y php70-php-devel php70-php-mcrypt php70-php-gd php70-php-pear php70-php-intl php70-php-soap
+yum install -y php70-php-mbstring php70-php-xml php70-php-pdo php70-php-mysqlnd php70-php-pecl-zip php70-php-pecl-xdebug
+
+#xdebug config
+cat /tmp/server-config/etc/opt/remi/php70/php.d/15-xdebug.ini >> $(php70 -i | grep -oP '[^ ]+xdebug.ini')
+
+# PHP7.1 PHP-FPM
+yum install -y php70-php-fpm
+cp -r /tmp/server-config/etc/opt/remi/php70/php-fpm.conf /etc/opt/remi/php70/
+service php70-php-fpm start
+
+# Tell PHP-FPM to start on system start
+chkconfig php70-php-fpm on
+
+yum -y install php70-php-pecl-redis
+yum -y install php70-php-pecl-memcached
+
 # Make things smaller
 yum -y clean all
 

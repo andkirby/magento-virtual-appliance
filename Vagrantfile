@@ -29,4 +29,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.network "forwarded_port", host_ip: VM_WEB_IP, guest: 80, host: 80
   config.vm.network "forwarded_port", host_ip: VM_WEB_IP, guest: 443, host: 443
+  config.vm.network "forwarded_port", host_ip: VM_WEB_IP, guest: 3306, host: 9309
 end

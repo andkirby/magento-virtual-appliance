@@ -12,7 +12,7 @@ if [ -z "${BASHRC_INIT}" ]; then
     readonly ORIGINAL_PATH
 
     # go to docroot by default
-    cd /var/www/
+    [ -d /var/www/ ] && cd /var/www/
 
     # colorize console
     PS1="\n\[\033[01;37m\]\$? "
@@ -28,3 +28,6 @@ export PATH="${ORIGINAL_PATH}:~/.composer/vendor/bin"
 alias mfab="mage-fab.sh"
 
 alias sync_time='sudo service ntpd stop && sudo ntpdate pool.ntp.org && sudo service ntpd start'
+
+# Restart all services
+alias res='sudo service nginx restart && sudo pkill -f php-fpm && sudo service php-fpm start && sudo service php70-php-fpm start && sudo service redis restart && sudo service memcached restart'
