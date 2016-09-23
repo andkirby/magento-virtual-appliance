@@ -178,7 +178,7 @@ chown -R vagrant:vagrant /var/www/magento
 ############## php 7.0.x ##############
 # move old bin PHP
 mv /usr/bin/php /usr/bin/php55
-ln -sf /usr/bin/php /usr/bin/php55
+ln -s /usr/bin/php55 /usr/bin/php
 
 yum install -y php70
 yum install -y php70-php-devel php70-php-mcrypt php70-php-gd php70-php-pear php70-php-intl php70-php-soap
