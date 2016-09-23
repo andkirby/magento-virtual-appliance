@@ -69,7 +69,7 @@ chkconfig php-fpm on
 
 # Installing percona, because it's better than MySQL
 # It's not really better at dev load, but it's what we run on production
-rpm -U http://www.percona.com/redir/downloads/percona-release/percona-release-0.0-1.x86_64.rpm
+rpm -U https://www.percona.com/redir/downloads/percona-release/redhat/latest/percona-release-0.1-4.noarch.rpm
 yum install -y Percona-Server-server-56
 mysql_install_db
 cp /tmp/server-config/etc/my.cnf /etc/
