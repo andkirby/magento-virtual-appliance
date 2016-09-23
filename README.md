@@ -1,4 +1,4 @@
-# The Redbox Appliance
+# The Redbox Appliance (extended)
 
 A Vagrant box for developing Magento websites.<br>
 It is based upon [`bento/centos-6.7`](https://atlas.hashicorp.com/bento/boxes/centos-6.7).
