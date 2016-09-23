@@ -1,4 +1,4 @@
-# The Redbox Appliance
+# The Redbox Appliance (extended)
 
 A Vagrant box for developing Magento websites.<br>
 It is based upon [`bento/centos-6.7`](https://atlas.hashicorp.com/bento/boxes/centos-6.7).
@@ -35,8 +35,10 @@ sensible.
 
 ### Commands list (aliases from `~/.bashrc`)
 #### Make new Virtual host
-`make_vhost new-host.cc` PHP 5.5 by default<br>
-Or `make_vhost new-host-70.cc` for PHP 7.0 (just use ending `-70.cc`)<br>
+`make_vhost new-host.cc` PHP 5.5 by default
+
+Or `make_vhost new-host-70.cc` for PHP 7.0 (just use ending `-70.cc`)
+
 Or direct command `sh ~/centos-scripts/make-host.sh new-host.cc`
 <br>(recommended format `*.cc`)
 
