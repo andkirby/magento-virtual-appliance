@@ -29,5 +29,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.network "forwarded_port", host_ip: VM_WEB_IP, guest: 80, host: 80
   config.vm.network "forwarded_port", host_ip: VM_WEB_IP, guest: 443, host: 443
-  config.vm.network "forwarded_port", host_ip: VM_WEB_IP, guest: 3306, host: 9309
+
+  # Port to make direct connection to MySQL
+  # See more info in http://stackoverflow.com/questions/14779104/how-to-allow-remote-connection-to-mysql
+  # config.vm.network "forwarded_port", host_ip: VM_WEB_IP, guest: 3306, host: 9309
 end
