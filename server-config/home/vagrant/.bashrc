@@ -25,7 +25,8 @@ fi
 export PATH="${ORIGINAL_PATH}:/home/vagrant/.composer/vendor/bin"
 
 # Aliases
-alias mfab="mage-fab.sh"
+# Magento-Fabric (removed, doesn't work)
+#alias mfab="mage-fab.sh"
 
 alias sync_time='sudo service ntpd stop && sudo ntpdate pool.ntp.org && sudo service ntpd start'
 

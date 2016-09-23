@@ -143,8 +143,8 @@ yum install -y python python-devel
 python /tmp/server-config/tmp/get-pip.py
 pip install fabric
 
-# Magento-Fabric
-su -c "/usr/local/bin/composer global require rbd/magento-fabric dev-master" vagrant
+# Magento-Fabric (removed, doesn't work)
+#su -c "/usr/local/bin/composer global require rbd/magento-fabric dev-master" vagrant
 
 # Add MageShell for Magento 1 installation from CLI
 # Initialized parameters in file ~/.mageinstall/params.sh
@@ -199,6 +199,7 @@ chkconfig php70-php-fpm on
 
 yum -y install php70-php-pecl-redis
 yum -y install php70-php-pecl-memcached
+############## EOF php 7.0.x ##############
 
 # Make things smaller
 yum -y clean all
