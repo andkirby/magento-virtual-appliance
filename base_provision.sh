@@ -146,7 +146,7 @@ pip install fabric
 # Magento-Fabric
 su -c "/usr/local/bin/composer global require rbd/magento-fabric dev-master" vagrant
 
-# Add MageShell for magento installation from CLI
+# Add MageShell for Magento 1 installation from CLI
 # Initialized parameters in file ~/.mageinstall/params.sh
 # To reinit use command
 #     $ mageshell install init
@@ -154,8 +154,10 @@ su -c "/usr/local/bin/composer global require rbd/magento-fabric dev-master" vag
 #     $ mageshell install -p mage.cc
 su -c "/usr/local/bin/composer global require andkirby/mageinstall ^7.0@beta" vagrant
 
-# centos-scripts
-su -c "cd; git clone https://github.com/andkirby/centos-scripts-mage.git" vagrant
+# Install centos-scripts
+su -c "cd; git clone https://github.com/andkirby/centos-scripts-mage.git ~/centos-scripts" vagrant
+# Install XDebug switcher
+su -c "cd; sh ~/centos-scripts/xd_swi_install.sh" vagrant
 
 # Nano editor colorization
 su -c "git clone https://github.com/scopatz/nanorc.git /home/vagrant/.nano && cat /home/vagrant/.nano/nanorc >> /home/vagrant/.nanorc" vagrant
