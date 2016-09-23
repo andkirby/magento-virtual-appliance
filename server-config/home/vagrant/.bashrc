@@ -36,3 +36,6 @@ alias res='sudo service nginx restart && sudo pkill -f php-fpm && sudo service p
 # Switch PHP versions
 alias php_switch_55='sudo ln -sf /usr/bin/php55 /usr/bin/php'
 alias php_switch_70='sudo ln -sf /usr/bin/php70 /usr/bin/php'
+
+# Make new virtual host
+alias make_vhost='sh /home/vagrant/centos-scripts/make-host.sh'
