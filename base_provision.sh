@@ -201,6 +201,9 @@ yum -y install php70-php-pecl-redis
 yum -y install php70-php-pecl-memcached
 ############## EOF php 7.0.x ##############
 
+# Add .bashrc for root user
+cat /tmp/server-config/root/.bashrc >> /root/.bashrc
+
 # Make things smaller
 yum -y clean all
 

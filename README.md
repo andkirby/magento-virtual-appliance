@@ -35,6 +35,7 @@ sensible.
 #### v2.2.0 to v2.3.0
  - Removed Magento Fabric (there are errors)<br>
  source (https://github.com/redbox-digital/magento-fabric.git)
+ - Mirrored some code from `.bashrc` for `root` user.
 #### v2.0.0 to v2.2.0
  - Updated nano to v2.2.
  - Added nano colorization.

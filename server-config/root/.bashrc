@@ -16,11 +16,11 @@ if [ -z "${BASHRC_INIT}" ]; then
     PS1=${PS1}" \[\033[00m\]\D{%T}\[\033[0;33m\] \w\[\033[00m\] \n\$ "
 fi
 
-alias sync_time='sudo service ntpd stop && sudo ntpdate pool.ntp.org && sudo service ntpd start'
+alias sync_time='service ntpd stop && ntpdate pool.ntp.org && service ntpd start'
 
 # Restart all services
-alias res='sudo service nginx restart && sudo pkill -f php-fpm && sudo service php-fpm start && sudo service php70-php-fpm start && sudo service redis restart && sudo service memcached restart'
+alias res='service nginx restart && pkill -f php-fpm && service php-fpm start && service php70-php-fpm start && service redis restart && service memcached restart'
 
 # Switch PHP versions
-alias php_switch_55='sudo ln -sf /usr/bin/php55 /usr/bin/php'
-alias php_switch_70='sudo ln -sf /usr/bin/php70 /usr/bin/php'
+alias php_switch_55='ln -sf /usr/bin/php55 /usr/bin/php'
+alias php_switch_70='ln -sf /usr/bin/php70 /usr/bin/php'
