@@ -125,6 +125,7 @@ curl -o n98-magerun.phar \
   https://raw.githubusercontent.com/netz98/n98-magerun/1.96.0/n98-magerun.phar
 chmod +x n98-magerun.phar
 mv n98-magerun.phar /usr/local/bin/n98-magerun.phar
+ln -s /usr/local/bin/n98-magerun.phar /usr/local/bin/n98-magerun
 
 # Magerun modules
 mkdir -p /usr/local/share/n98-magerun/modules/
